@@ -52,17 +52,3 @@ class simpleAES():
         cipher = AES.new(self.key, AES.MODE_CBC, self.iv)
         plaintext = cipher.decrypt(ciphertext)
         return __unpad__(plaintext)
-
-
-key = keyGenerator()
-IV = ivGenerator()
-
-aes = simpleAES(key, IV)
-
-text = "This is a test".encode()
-
-ciphertext = aes.encrypt(text)
-plaintext = aes.decrypt(ciphertext).decode()
-
-print("This is the ciphertext:", ciphertext)
-print("This is the plaintext:", plaintext)
