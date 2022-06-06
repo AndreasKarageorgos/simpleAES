@@ -8,9 +8,11 @@ from Crypto.Random import get_random_bytes
 def __pad__(msg):
     if (len(msg)+1)%16==0:
         return msg+"$".encode()+get_random_bytes(16)
+    elif (len(msg)+2)%16==0:
+        return msg+"$".encode()+get_random_bytes(17)
     else:
         remain = 16 - (len(msg)%16)
-        return msg+"$".encode()+get_random_bytes(remain-1)
+    return msg+"$".encode()+get_random_bytes(remain-1)
 
 #Removes the extra bytes from the original text.
 def __unpad__(msg):
@@ -32,7 +34,6 @@ class simpleAES():
             raise Exception("The key must be in bytes")
         elif len(key)!=32:
             raise Exception("The key must be 32 bytes")
-        
         if not isinstance(IV,bytes):
             raise Exception("The IV must be in bytes")
         elif len(IV)!=16:
