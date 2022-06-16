@@ -7,7 +7,9 @@ To use this library just drag and drop the 'simpleAES.py' file into your work be
 
     pip install pycryptodome
 
-## Code example 1
+# Code examples
+
+## Automated key generation:
 
     from simpleAES import *
 
@@ -24,13 +26,17 @@ To use this library just drag and drop the 'simpleAES.py' file into your work be
     print("This is the ciphertext:", ciphertext)
     print("This is the plaintext:", plaintext.decode())
 
-## Code example 2
+## Setup custom keys.
 
     from simpleAES import *
 
     key = "This is a key".encode()
     iv = "This is an IV".encode()
     salt = "This is a salt".encode()
+
+    # The hash option will hash the key with the sha256 algorithm
+    # and the IV with the md5 algorithm with the salt to
+    # prevent brute force attacks 
 
     aes = simpleAES(key, iv, hash=True, salt=salt)
 
@@ -44,7 +50,7 @@ To use this library just drag and drop the 'simpleAES.py' file into your work be
 
 ---
 
-### Store the keys to a file.
+### Store the key to a file.
 
     from simpleAES import *
 
@@ -53,26 +59,25 @@ To use this library just drag and drop the 'simpleAES.py' file into your work be
 
     aes = simpleAES(key, IV)
 
-    path = "~/keys/"
-    keyname = "key.key"
+    path = "key.key"
 
-    aes.extractKey(path+keyname)
+    aes.extractKey(path)
 
 
 ### Load the keys from file.
 
     from simpleAES import *
 
-    path = "~/keys/"
-    keyname = "key.key"
+    path = "key.key"
 
-    data = loadKeyFromFile(path+keyname)
+    data = loadKeyFromFile(path)
 
     key = data[0]
     IV = data[1]
 
     # When you load a key from file do not set the 
-    # hash value to True or use the salt option.
-    # Unless you know what you are doing.
+    # hash value to True or use the salt option,
+    # because in the file are stored the hashed values and not
+    # the original keywords.
     
     aes = simpleAES(key, IV)
