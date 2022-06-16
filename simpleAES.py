@@ -24,10 +24,11 @@ def __unpad__(msg):
 def keyGenerator():
     return get_random_bytes(32)
 
-#Generates and returns 16 random bytes that can be used for the IV
+#Generates and returns 16 random bytes that can be used for the IV.
 def ivGenerator():
     return get_random_bytes(16)
 
+#Reads a file that holds the key, iv and returns a tuple with both of them.
 def loadKeyFromFile(path):
     with open(path,"rb") as f:
         data = f.read()

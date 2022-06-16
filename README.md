@@ -41,3 +41,38 @@ To use this library just drag and drop the 'simpleAES.py' file into your work be
 
     print("ciphertext:", ciphertext)
     print("plaintext:", plaintext.decode())
+
+---
+
+### Store the keys to a file.
+
+    from simpleAES import *
+
+    keyGenerator()
+    IV = ivGenerator()
+
+    aes = simpleAES(key, IV)
+
+    path = "~/keys/"
+    keyname = "key.key"
+
+    aes.extractKey(path+keyname)
+
+
+### Load the keys from file.
+
+    from simpleAES import *
+
+    path = "~/keys/"
+    keyname = "key.key"
+
+    data = loadKeyFromFile(path+keyname)
+
+    key = data[0]
+    IV = data[1]
+
+    # When you load a key from file do not set the 
+    # hash value to True or use the salt option.
+    # Unless you know what you are doing.
+    
+    aes = simpleAES(key, IV)
