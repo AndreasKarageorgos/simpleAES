@@ -62,9 +62,9 @@ class simpleAES():
         
     def decrypt(self, ciphertext):
         if not isinstance(ciphertext, bytes):
-            raise Exception("The ciphertext must be in bytes")
+            raise ValueError("The ciphertext must be in bytes")
         if len(ciphertext)%16!=0:
-            raise Exception("Unknown ciphertext")
+            raise ValueError("Unknown ciphertext")
         cipher = AES.new(self.key, AES.MODE_CBC, self.iv)
         plaintext = cipher.decrypt(ciphertext)
         return __unpad__(plaintext)
