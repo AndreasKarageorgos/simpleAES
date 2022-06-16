@@ -26,7 +26,7 @@ To use this library just drag and drop the 'simpleAES.py' file into your work be
     print("This is the ciphertext:", ciphertext)
     print("This is the plaintext:", plaintext.decode())
 
-## Setup custom keys.
+## Setup custom keys:
 
     from simpleAES import *
 
@@ -50,11 +50,11 @@ To use this library just drag and drop the 'simpleAES.py' file into your work be
 
 ---
 
-### Store the key to a file.
+### Store the key to a file:
 
     from simpleAES import *
 
-    keyGenerator()
+    key = keyGenerator()
     IV = ivGenerator()
 
     aes = simpleAES(key, IV)
@@ -64,7 +64,7 @@ To use this library just drag and drop the 'simpleAES.py' file into your work be
     aes.extractKey(path)
 
 
-### Load the keys from file.
+### Load the key from file:
 
     from simpleAES import *
 
