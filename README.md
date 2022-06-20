@@ -4,8 +4,18 @@ An easy way to use the aes CBC mode of pycryptodome.
 To use this library just drag and drop the 'simpleAES.py' file into your work bench and import it to your program.
 
 ## Dependencies
+---
+Check your pip version with:
+
+    pip --version
+
+if it is for <b>python3</b> then use the above command.
 
     pip install pycryptodome
+
+else try to use the pip3 comand:
+
+    pip3 install pycryptodome
 
 # Code examples
 

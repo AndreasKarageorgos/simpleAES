@@ -52,7 +52,7 @@ class simpleAES():
                 raise ValueError("The IV must be 16 bytes long")
             self.key = key
             self.iv = IV
-    
+            
     def encrypt(self, plaintext):
         if not isinstance(plaintext, bytes):
             raise Exception("The plaintext must be in bytes")
