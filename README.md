@@ -1,7 +1,5 @@
 # Simple AES
 
-You can find more information about this library [HERE](https://sites.google.com/view/simpleaes/)
-
 An easy way to use the aes CBC mode of pycryptodome.
 To use this library just drag and drop the 'simpleAES.py' file into your work bench and import it to your program.
 
