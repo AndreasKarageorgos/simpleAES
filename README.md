@@ -73,6 +73,29 @@ else try to use the pip3 comand:
 
     aes.extractKey(path)
 
+### Store the key to an encrypted file:
+
+    from simpleAES import *
+    
+    key = keyGenerator()
+    iv = ivGenerator()
+
+    aes = simpleAES(key, iv)
+
+    key2 = "abcde".encode()
+    iv2 = "12345".encode()
+    salt = "qwerty".encode()
+
+    aes2 = simpleAES(key, iv , hash=True, salt=salt)
+
+    path="encryptedKey.key"
+
+    #It will encrypt the file with the 'aes2' object.
+
+    aes.extractEncryptedKey(aes2, path)
+
+
+
 
 ### Load the key from file:
 
@@ -91,3 +114,20 @@ else try to use the pip3 comand:
     # the original keywords.
     
     aes = simpleAES(key, IV)
+
+### Load the key from encrypted file:
+
+    key = "abcde".encode()
+    iv = "12345".encode()
+    salt = "qwerty".encode()
+
+    aes = simpleAES(key, iv, hash=True, salt=salt)
+
+    path="encryptedKey.key"
+
+    data = loadKeyFromEncryptedFile(aes, path)
+
+    key = data[0]
+    iv = data[1]
+
+    aes = simpleAES(key, iv)
