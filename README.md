@@ -11,7 +11,7 @@ Check your pip version with:
 
     pip --version
 
-if it is for <b>python3</b> then use the above command.
+if it is for <b>python3</b> then use the following command.
 
     pip install pycryptodome
 
