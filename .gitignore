@@ -1,0 +1,8 @@
+test*
+*__pycache__*
+.vscode*
+*.pyc
+build*
+dist*
+build.sh
+simple_aes.egg-info*
