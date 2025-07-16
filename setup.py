@@ -4,7 +4,7 @@ with open("README.md", "r") as readme:
     description = readme.read()
 
 setup(
-    name="simple-aes",
+    name="pysimpleaes",
     author="Andreas Karageorgos",
     version="1.0",
     packages=find_packages(),

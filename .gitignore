@@ -5,4 +5,4 @@ test*
 build*
 dist*
 build.sh
-simple_aes.egg-info*
+pysimple_aes.egg-info*
