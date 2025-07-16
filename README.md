@@ -5,13 +5,13 @@ Find more information about this library [HERE](https://sites.google.com/view/si
 An easy way to use the aes CBC mode of pycryptodome.
 To use this library just type:
 
-    pip install pysimple_aes
+    pip install pycryptosimple-aes
 
 # Code examples
 
 ## Automated key generation:
 
-    from pysimple_aes import *
+    from pycryptosimple_aes import *
 
     key = keyGenerator()
     IV = ivGenerator()
@@ -28,7 +28,7 @@ To use this library just type:
 
 ## Setup custom keys:
 
-    from pysimple_aes import *
+    from pycryptosimple_aes import *
 
     key = "This is a key".encode()
     iv = "This is an IV".encode()
@@ -52,7 +52,7 @@ To use this library just type:
 
 ### Store the key to a file:
 
-    from pysimple_aes import *
+    from pycryptosimple_aes import *
 
     key = keyGenerator()
     IV = ivGenerator()
@@ -65,7 +65,7 @@ To use this library just type:
 
 ### Store the key to an encrypted file:
 
-    from pysimple_aes import *
+    from pycryptosimple_aes import *
     
     key = keyGenerator()
     iv = ivGenerator()
@@ -89,7 +89,7 @@ To use this library just type:
 
 ### Load the key from file:
 
-    from pysimple_aes import *
+    from pycryptosimple_aes import *
 
     path = "key.key"
 
